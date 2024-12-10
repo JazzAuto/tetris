@@ -201,9 +201,9 @@ void checkLines() {
 }
 
 void drawArena() {
-    printf("\e[?25l\e[H");  
+    printf("\e[?25l\e[H");
 
-    char buffer[512];
+    char buffer[A_ALTURA * (A_LARGURA + 3)]; 
     int bufferIndex = 0;
 
     for (int y = 0; y < A_ALTURA; y++) {
@@ -225,6 +225,10 @@ void drawArena() {
         buffer[bufferIndex++] = '|';
         buffer[bufferIndex++] = '\n';
     }
+
+    buffer[bufferIndex] = '\0';
+    printf("%s\n\nScore: %d\n\n", buffer, score);
+}
 
     buffer[bufferIndex] = '\0';
     printf("%s\n\nScore: %d\n\n", buffer, score);
