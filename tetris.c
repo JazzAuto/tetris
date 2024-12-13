@@ -27,6 +27,7 @@ uint32_t score = 0;
 bool gameOver = false;
 int currPecaIdx;
 int currX = A_LARGURA / 2;
+int nextRotation;
 
 
 int main() {
@@ -115,7 +116,7 @@ void processInputs() {
         int key = _getch();
         switch (key) {
         case 32:  // espaço
-            int nextRotation = (currRotation + 1) % 4;
+            nextRotation = (currRotation + 1) % 4;
             if (validPos(currPecaIdx, nextRotation, currX, currY)) {
                 currRotation = nextRotation;
             }
