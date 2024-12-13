@@ -231,6 +231,3 @@ void drawArena() {
     printf("%s\n\nScore: %d\n\n", buffer, score);
 }
 
-    buffer[bufferIndex] = '\0';
-    printf("%s\n\nScore: %d\n\n", buffer, score);
-}
